@@ -1040,7 +1040,7 @@ theorem all_host_eventually {K k b m κ F D E β : ℕ} {δ ε : ℝ}
     have hh : (0:ℝ)≤Nat.log 2 (3*U n+1):=Nat.cast_nonneg _
     linarith)
   have hdrop : A*(J+1:ℕ)^4≤(n:ℝ)^ε:=by
-    have hh:=le_mul_of_one_le_right (show (0:ℝ)≤A*(J+1:ℕ)^4 by positivity) hbinary
+    have hh:=le_mul_of_one_le_right (show (0:ℝ)≤A*(J+1:ℕ)^4 from mul_nonneg hA (by positivity)) hbinary
     exact hh.trans (by simpa [J] using hpolyN)
   have htimeN:=all_host_prefix_bound (n:=n) (U:=U n) (κ:=κ)
     (carries:=2^J) (D:=D) (E:=E) maps Q (I n) hK hk hgood hn (hU n hn) hFpos hF hb
