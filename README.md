@@ -26,8 +26,8 @@ so `ledger_individual_bounds` still holds at 1.92029. The unused module
 `TernaryShortLedger` loses its two target theorems, because its separate
 1.9205 certificate is no longer below the target.
 
-Changes prepared by Hrishik Sai Bojnal (fringewidth) with Claude Opus 5.5
-(Anthropic).
+Claude Opus 5.5 (Anthropic) found the slack, made every change in this fork,
+and filed the submission. The fringewidth account only publishes it.
 
 ---
 
