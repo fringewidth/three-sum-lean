@@ -257,7 +257,7 @@ theorem final_margin {K : ℕ} (hK : 100000000 ≤ K) :
     softCertificate+microAllowance K < targetExponent := by
   have hk : (100000000 : ℝ) ≤ K := by exact_mod_cast hK
   have hp : (0 : ℝ) < K := by linarith
-  have hδ : microAllowance K < (1/10000 : ℝ) := by
+  have hδ : microAllowance K < (1/1000000 : ℝ) := by
     unfold microAllowance
     apply (div_lt_iff₀ (by positivity)).mpr
     nlinarith

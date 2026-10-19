@@ -55,12 +55,4 @@ theorem all_costs_with_overhead_lt_shortCertificate :
   dsimp [certificateExponent, shortCertificate] at *
   linarith
 
-theorem shortCertificate_lt_target : shortCertificate < targetExponent := by
-  norm_num [shortCertificate, targetExponent]
-
-theorem all_costs_with_overhead_lt_target :
-    ∀ t ∈ costLedger, t + scoreOverhead < targetExponent := by
-  intro t ht
-  exact (all_costs_with_overhead_lt_shortCertificate t ht).trans shortCertificate_lt_target
-
 end ThreeSum.TernaryShortLedger

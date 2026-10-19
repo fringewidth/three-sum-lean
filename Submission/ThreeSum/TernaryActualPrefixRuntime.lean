@@ -334,7 +334,7 @@ theorem full_exponent_lt {K m : ℕ} (hK : 100000000≤K) (c d : ℕ)
         (max_lt hgood.2.2.2.1 (max_lt hgood.2.2.2.2.1 hgood.2.2.2.2.2))))
   have hkr : (100000000:ℝ)≤K:=by exact_mod_cast hK
   have hkp : (0:ℝ)<K:=by linarith
-  have hmicro : microAllowance K<(1/10000:ℝ):=by
+  have hmicro : microAllowance K<(1/1000000:ℝ):=by
     unfold microAllowance
     apply (div_lt_iff₀ (by positivity)).mpr
     nlinarith

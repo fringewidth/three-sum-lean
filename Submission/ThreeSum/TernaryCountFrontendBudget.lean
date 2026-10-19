@@ -460,9 +460,9 @@ theorem all_prefix_time_bound {K k m b C A degree : ℕ}
   change _≤((A : ℝ)*D*(C : ℝ)^3)*R^(degree+4)*E
   exact htotal.trans_eq (by rw [pow_add]; ring)
 
-def frontendExponent : ℝ :=19207/10000
+def frontendExponent : ℝ :=1920293/1000000
 
-theorem frontend_margin : targetExponent-frontendExponent=(3/10000 : ℝ) := by
+theorem frontend_margin : targetExponent-frontendExponent=(7/1000000 : ℝ) := by
   norm_num [targetExponent,frontendExponent]
 
 theorem principal_exponent_lt {K m : ℕ} (hK : 100000000≤K) (c d : ℕ)
@@ -473,7 +473,7 @@ theorem principal_exponent_lt {K m : ℕ} (hK : 100000000≤K) (c d : ℕ)
     max_lt hgood.2.1 hgood.2.2.1
   have hkr : (100000000 : ℝ)≤K := by exact_mod_cast hK
   have hkp : (0 : ℝ)<K := by linarith
-  have hmicro : microAllowance K<(1/10000 : ℝ) := by
+  have hmicro : microAllowance K<(1/1000000 : ℝ) := by
     unfold microAllowance
     apply (div_lt_iff₀ (by positivity)).mpr
     nlinarith

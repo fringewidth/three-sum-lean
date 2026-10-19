@@ -1,3 +1,36 @@
+# Deterministic 3SUM in O(n^1.9203), formalized in Lean
+
+This fork changes only the exponent margins of
+[c0ldzy17/three-sum-lean](https://github.com/c0ldzy17/three-sum-lean) at
+commit `dd4bce5575effbf32c672b12a1a31e004492f2ec` (the Lean Verified 1.921
+record). The algorithm, the program, and every proof step are theirs. All
+credit for the construction and the formalization stays with c0ldzy17 and the
+authors listed in [METHOD.md](METHOD.md) and [NOTICE](NOTICE).
+
+The real-valued ledger maximum is 1.920279. The original proof certifies it
+below 1.9203 and then adds margins of 1e-4 to 3e-4 at each step. Each margin
+only has to absorb a term that is at most 10/K or 1/(100K^2), with
+K >= 10^8. This fork sets:
+
+| Constant | Original | This fork |
+|---|---|---|
+| `TernaryParameters.certificateExponent` | 19203/10000 | 192029/100000 |
+| `TernaryOversizeRates.softCertificate` | 4801/2500 | 1920291/1000000 |
+| `TernaryCountFrontendBudget.frontendExponent` | 19207/10000 | 1920293/1000000 |
+| `TernaryActualColoredRuntime.exponent` | 19209/10000 | 1920295/1000000 |
+| final target (`Race.bound`) | 1921/1000 | 19203/10000 |
+
+The micro-allowance bounds change from 1/10000 to 1/1000000 to match. The
+existing interval bounds on the entropies certify the ledger below 1.920289,
+so `ledger_individual_bounds` still holds at 1.92029. The unused module
+`TernaryShortLedger` loses its two target theorems, because its separate
+1.9205 certificate is no longer below the target.
+
+Changes prepared by Hrishik Sai Bojnal (fringewidth) with Claude Opus 5.5
+(Anthropic).
+
+---
+
 # Deterministic 3SUM in O(n^1.921), formalized in Lean
 
 The entry point exports the exact rational bound **1921/1000 = 1.921**:

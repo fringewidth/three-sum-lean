@@ -205,7 +205,7 @@ def deficit : ℚ := 268969 / 20000000
 def bankY : ℚ := 3632479 / 20000000
 def queryZ : ℚ := 7523953 / 100000000
 def target192028 : ℚ := 48007 / 25000
-def target1921 : ℚ := 1921 / 1000
+def target1921 : ℚ := 19203 / 10000
 
 theorem pi_sum : pi0 + pi1 + pi2 = 1 := by
   norm_num [pi0, pi1, pi2]
